@@ -1,5 +1,5 @@
-import { useEcharts } from "@/hooks/useEcharts";
-import * as echarts from "echarts";
+import { useEcharts } from "@/hooks/useEcharts"
+import * as echarts from "echarts"
 
 const LineChart = () => {
 	let option: echarts.EChartsOption = {
@@ -109,10 +109,10 @@ const LineChart = () => {
 				data: [820, 932, 901, 934, 1290, 1330, 1320]
 			}
 		]
-	};
+	}
 
-	const [echartsRef] = useEcharts(option);
-	return <div ref={echartsRef} className="card content-box"></div>;
-};
+	const [echartsRef] = useEcharts(option)
+	return <div ref={echartsRef} className="card content-box"></div>
+}
 
-export default LineChart;
+export default LineChart

@@ -9,7 +9,7 @@ const Github = () => {
 				🍒🍉🍊
 			</span>
 		</div>
-	);
-};
+	)
+}
 
-export default Github;
+export default Github

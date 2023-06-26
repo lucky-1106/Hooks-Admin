@@ -1,41 +1,41 @@
-import md5 from "js-md5";
-import { useState } from "react";
-import { Button, Form, Input, message } from "antd";
-import { useNavigate } from "react-router-dom";
-import { Login } from "@/api/interface";
-import { loginApi } from "@/api/modules/login";
-import { HOME_URL } from "@/config/config";
-import { connect } from "react-redux";
-import { setToken } from "@/redux/modules/global/action";
-import { useTranslation } from "react-i18next";
-import { setTabsList } from "@/redux/modules/tabs/action";
-import { UserOutlined, LockOutlined, CloseCircleOutlined } from "@ant-design/icons";
+import md5 from "js-md5"
+import { useState } from "react"
+import { Button, Form, Input, message } from "antd"
+import { useNavigate } from "react-router-dom"
+import { Login } from "@/api/interface"
+import { loginApi } from "@/api/modules/login"
+import { HOME_URL } from "@/config/config"
+import { connect } from "react-redux"
+import { setToken } from "@/redux/modules/global/action"
+import { useTranslation } from "react-i18next"
+import { setTabsList } from "@/redux/modules/tabs/action"
+import { UserOutlined, LockOutlined, CloseCircleOutlined } from "@ant-design/icons"
 
 const LoginForm = (props: any) => {
-	const { t } = useTranslation();
-	const { setToken, setTabsList } = props;
-	const navigate = useNavigate();
-	const [form] = Form.useForm();
-	const [loading, setLoading] = useState<boolean>(false);
+	const { t } = useTranslation()
+	const { setToken, setTabsList } = props
+	const navigate = useNavigate()
+	const [form] = Form.useForm()
+	const [loading, setLoading] = useState<boolean>(false)
 
 	// 登录
 	const onFinish = async (loginForm: Login.ReqLoginForm) => {
 		try {
-			setLoading(true);
-			loginForm.password = md5(loginForm.password);
-			const { data } = await loginApi(loginForm);
-			setToken(data?.access_token);
-			setTabsList([]);
-			message.success("登录成功！");
-			navigate(HOME_URL);
+			setLoading(true)
+			loginForm.password = md5(loginForm.password)
+			const { data } = await loginApi(loginForm)
+			setToken(data?.access_token)
+			setTabsList([])
+			message.success("登录成功！")
+			navigate(HOME_URL)
 		} finally {
-			setLoading(false);
+			setLoading(false)
 		}
-	};
+	}
 
 	const onFinishFailed = (errorInfo: any) => {
-		console.log("Failed:", errorInfo);
-	};
+		console.log("Failed:", errorInfo)
+	}
 
 	return (
 		<Form
@@ -57,7 +57,7 @@ const LoginForm = (props: any) => {
 			<Form.Item className="login-btn">
 				<Button
 					onClick={() => {
-						form.resetFields();
+						form.resetFields()
 					}}
 					icon={<CloseCircleOutlined />}
 				>
@@ -68,8 +68,8 @@ const LoginForm = (props: any) => {
 				</Button>
 			</Form.Item>
 		</Form>
-	);
-};
+	)
+}
 
-const mapDispatchToProps = { setToken, setTabsList };
-export default connect(null, mapDispatchToProps)(LoginForm);
+const mapDispatchToProps = { setToken, setTabsList }
+export default connect(null, mapDispatchToProps)(LoginForm)

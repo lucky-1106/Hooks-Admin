@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { useEcharts } from "@/hooks/useEcharts";
-import "echarts-liquidfill";
-import "./RealTimeAccessChart.less";
+import { useState } from "react"
+import { useEcharts } from "@/hooks/useEcharts"
+import "echarts-liquidfill"
+import "./RealTimeAccessChart.less"
 
 const RealTimeAccessChart = () => {
-	let data = 0.5;
+	let data = 0.5
 	const option = {
 		title: [
 			{
@@ -176,9 +176,9 @@ const RealTimeAccessChart = () => {
 				color: "#31d8d5"
 			}
 		]
-	};
-	const [echartsRef] = useEcharts(option, data);
-	const [actualTotal] = useState("216908");
+	}
+	const [echartsRef] = useEcharts(option, data)
+	const [actualTotal] = useState("216908")
 	return (
 		<>
 			<div className="actual-total">
@@ -191,14 +191,14 @@ const RealTimeAccessChart = () => {
 							<div className="actual-item" key={index}>
 								{item}
 							</div>
-						);
+						)
 					})}
 					<div className="actual-item">人</div>
 				</div>
 			</div>
 			<div ref={echartsRef} className="actual-echarts"></div>
 		</>
-	);
-};
+	)
+}
 
-export default RealTimeAccessChart;
+export default RealTimeAccessChart

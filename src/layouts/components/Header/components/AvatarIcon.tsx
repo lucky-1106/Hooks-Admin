@@ -1,23 +1,23 @@
-import { useRef } from "react";
-import { Avatar, Modal, Menu, Dropdown, message } from "antd";
-import { ExclamationCircleOutlined } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
-import { HOME_URL } from "@/config/config";
-import { connect } from "react-redux";
-import { setToken } from "@/redux/modules/global/action";
-import PasswordModal from "./PasswordModal";
-import InfoModal from "./InfoModal";
-import avatar from "@/assets/images/avatar.png";
+import { useRef } from "react"
+import { Avatar, Modal, Menu, Dropdown, message } from "antd"
+import { ExclamationCircleOutlined } from "@ant-design/icons"
+import { useNavigate } from "react-router-dom"
+import { HOME_URL } from "@/config/config"
+import { connect } from "react-redux"
+import { setToken } from "@/redux/modules/global/action"
+import PasswordModal from "./PasswordModal"
+import InfoModal from "./InfoModal"
+import avatar from "@/assets/images/avatar.png"
 
 const AvatarIcon = (props: any) => {
-	const { setToken } = props;
-	const navigate = useNavigate();
+	const { setToken } = props
+	const navigate = useNavigate()
 
 	interface ModalProps {
-		showModal: (params: { name: number }) => void;
+		showModal: (params: { name: number }) => void
 	}
-	const passRef = useRef<ModalProps>(null);
-	const infoRef = useRef<ModalProps>(null);
+	const passRef = useRef<ModalProps>(null)
+	const infoRef = useRef<ModalProps>(null)
 
 	// 退出登录
 	const logout = () => {
@@ -28,12 +28,12 @@ const AvatarIcon = (props: any) => {
 			okText: "确认",
 			cancelText: "取消",
 			onOk: () => {
-				setToken("");
-				message.success("退出登录成功！");
-				navigate("/login");
+				setToken("")
+				message.success("退出登录成功！")
+				navigate("/login")
 			}
-		});
-	};
+		})
+	}
 
 	// Dropdown Menu
 	const menu = (
@@ -64,7 +64,7 @@ const AvatarIcon = (props: any) => {
 				}
 			]}
 		></Menu>
-	);
+	)
 	return (
 		<>
 			<Dropdown overlay={menu} placement="bottom" arrow trigger={["click"]}>
@@ -73,8 +73,8 @@ const AvatarIcon = (props: any) => {
 			<InfoModal innerRef={infoRef}></InfoModal>
 			<PasswordModal innerRef={passRef}></PasswordModal>
 		</>
-	);
-};
+	)
+}
 
-const mapDispatchToProps = { setToken };
-export default connect(null, mapDispatchToProps)(AvatarIcon);
+const mapDispatchToProps = { setToken }
+export default connect(null, mapDispatchToProps)(AvatarIcon)

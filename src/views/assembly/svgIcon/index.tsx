@@ -1,6 +1,6 @@
-import { Alert, Descriptions } from "antd";
-import SvgIcon from "@/components/svgIcon";
-import "./index.less";
+import { Alert, Descriptions } from "antd"
+import SvgIcon from "@/components/svgIcon"
+import "./index.less"
 
 const svgIcon = () => {
 	return (
@@ -30,7 +30,7 @@ const svgIcon = () => {
 				<Descriptions.Item label="iconStyle"> 图标的样式，默认样式为 {"{ width: 100px, height: 100px}"} </Descriptions.Item>
 			</Descriptions>
 		</div>
-	);
-};
+	)
+}
 
-export default svgIcon;
+export default svgIcon

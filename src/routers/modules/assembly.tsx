@@ -1,7 +1,7 @@
-import React from "react";
-import lazyLoad from "@/routers/utils/lazyLoad";
-import { LayoutIndex } from "@/routers/constant";
-import { RouteObject } from "@/routers/interface";
+import React from "react"
+import lazyLoad from "@/routers/utils/lazyLoad"
+import { LayoutIndex } from "@/routers/constant"
+import { RouteObject } from "@/routers/interface"
 
 // 常用组件模块
 const assemblyRouter: Array<RouteObject> = [
@@ -49,6 +49,6 @@ const assemblyRouter: Array<RouteObject> = [
 			}
 		]
 	}
-];
+]
 
-export default assemblyRouter;
+export default assemblyRouter

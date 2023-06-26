@@ -1,6 +1,6 @@
-import React from "react";
-import lazyLoad from "@/routers/utils/lazyLoad";
-import { RouteObject } from "@/routers/interface";
+import React from "react"
+import lazyLoad from "@/routers/utils/lazyLoad"
+import { RouteObject } from "@/routers/interface"
 
 // 错误页面模块
 const errorRouter: Array<RouteObject> = [
@@ -31,6 +31,6 @@ const errorRouter: Array<RouteObject> = [
 			key: "500"
 		}
 	}
-];
+]
 
-export default errorRouter;
+export default errorRouter

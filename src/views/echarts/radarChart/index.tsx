@@ -1,5 +1,5 @@
-import { useEcharts } from "@/hooks/useEcharts";
-import * as echarts from "echarts";
+import { useEcharts } from "@/hooks/useEcharts"
+import * as echarts from "echarts"
 
 const RadarChart = () => {
 	let option: echarts.EChartsOption = {
@@ -42,10 +42,10 @@ const RadarChart = () => {
 				]
 			}
 		]
-	};
+	}
 
-	const [echartsRef] = useEcharts(option);
-	return <div ref={echartsRef} className="card content-box"></div>;
-};
+	const [echartsRef] = useEcharts(option)
+	return <div ref={echartsRef} className="card content-box"></div>
+}
 
-export default RadarChart;
+export default RadarChart

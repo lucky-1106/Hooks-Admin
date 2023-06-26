@@ -1,17 +1,17 @@
-import { defineConfig, loadEnv, ConfigEnv, UserConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import { resolve } from "path";
-import { wrapperEnv } from "./src/utils/getEnv";
-import { visualizer } from "rollup-plugin-visualizer";
-import { createHtmlPlugin } from "vite-plugin-html";
-import viteCompression from "vite-plugin-compression";
-import eslintPlugin from "vite-plugin-eslint";
-import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import { defineConfig, loadEnv, ConfigEnv, UserConfig } from "vite"
+import react from "@vitejs/plugin-react"
+import { resolve } from "path"
+import { wrapperEnv } from "./src/utils/getEnv"
+import { visualizer } from "rollup-plugin-visualizer"
+import { createHtmlPlugin } from "vite-plugin-html"
+import viteCompression from "vite-plugin-compression"
+import eslintPlugin from "vite-plugin-eslint"
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons"
 
 // @see: https://vitejs.dev/config/
 export default defineConfig((mode: ConfigEnv): UserConfig => {
-	const env = loadEnv(mode.mode, process.cwd());
-	const viteEnv = wrapperEnv(env);
+	const env = loadEnv(mode.mode, process.cwd())
+	const viteEnv = wrapperEnv(env)
 
 	return {
 		// base: "/",
@@ -43,7 +43,7 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 			// 代理跨域（mock 不需要配置，这里只是个事列）
 			proxy: {
 				"/api": {
-					target: "https://mock.mengxuegu.com/mock/62abda3212c1416424630a45", // easymock
+					target: " https://mock.mengxuegu.com/mock/648ff96797a36459050da406/lucky", // easymock
 					changeOrigin: true,
 					rewrite: path => path.replace(/^\/api/, "")
 				}
@@ -102,5 +102,5 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 				}
 			}
 		}
-	};
-});
+	}
+})

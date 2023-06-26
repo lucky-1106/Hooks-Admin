@@ -1,7 +1,7 @@
-import React from "react";
-import lazyLoad from "@/routers/utils/lazyLoad";
-import { LayoutIndex } from "@/routers/constant";
-import { RouteObject } from "@/routers/interface";
+import React from "react"
+import lazyLoad from "@/routers/utils/lazyLoad"
+import { LayoutIndex } from "@/routers/constant"
+import { RouteObject } from "@/routers/interface"
 
 // 表单 Form 模块
 const formRouter: Array<RouteObject> = [
@@ -40,6 +40,6 @@ const formRouter: Array<RouteObject> = [
 			}
 		]
 	}
-];
+]
 
-export default formRouter;
+export default formRouter

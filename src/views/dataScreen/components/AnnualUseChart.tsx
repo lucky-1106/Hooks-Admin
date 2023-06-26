@@ -1,14 +1,14 @@
-import { useEcharts } from "@/hooks/useEcharts";
-import { EChartsOption } from "echarts";
-import "./AnnualUseChart.less";
+import { useEcharts } from "@/hooks/useEcharts"
+import { EChartsOption } from "echarts"
+import "./AnnualUseChart.less"
 
 interface ChartProp {
-	label: string;
-	value: string[];
+	label: string
+	value: string[]
 }
 
 const AnnualUseChart = () => {
-	const gradientColors = ["rgba(254, 219, 101,0.1)", "rgba(0, 122, 254,0.1)", "rgba(255, 75, 122, 0.1)"];
+	const gradientColors = ["rgba(254, 219, 101,0.1)", "rgba(0, 122, 254,0.1)", "rgba(255, 75, 122, 0.1)"]
 	let annualData = [
 		{
 			label: new Date().getFullYear() - 2 + "年",
@@ -22,13 +22,13 @@ const AnnualUseChart = () => {
 			label: new Date().getFullYear() + "年",
 			value: ["548", "259", "113", "90", "69", "512", "23", "49", "28", "420", "313", "156"]
 		}
-	];
+	]
 	let data = {
 		data: annualData,
 		unit: annualData.map(val => val.label),
 		columns: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
 		colors: ["#FFA600", "#007AFE", "#FF4B7A"]
-	};
+	}
 	const option: EChartsOption = {
 		tooltip: {
 			trigger: "axis",
@@ -39,7 +39,7 @@ const AnnualUseChart = () => {
 			padding: 0,
 			backgroundColor: "transparent",
 			formatter: (p: any) => {
-				let str = "";
+				let str = ""
 				p.forEach((val: any) => {
 					str += `
           <div class="year-item">
@@ -47,8 +47,8 @@ const AnnualUseChart = () => {
             <span class="year-name">${val.seriesName}</span>
             <span class="year-value">${val.data >= 10000 ? (val.data / 10000).toFixed(2) + "w" : val.data}</span>
           </div>
-          `;
-				});
+          `
+				})
 				let dom = `
                     <div class="annual-tooTip">
                       <span class="annual-month">${p[0].dataIndex + 1}月</span>
@@ -56,8 +56,8 @@ const AnnualUseChart = () => {
                         ${str}
                       </div>
                     </div>
-                  `;
-				return dom;
+                  `
+				return dom
 			}
 		},
 		legend: {
@@ -97,7 +97,7 @@ const AnnualUseChart = () => {
 					padding: 0,
 					fontSize: 12,
 					formatter: function (data) {
-						return data;
+						return data
 					}
 				},
 				splitLine: {
@@ -141,9 +141,9 @@ const AnnualUseChart = () => {
 				padding: 0,
 				formatter: function (value: any) {
 					if (value >= 10000) {
-						value = value / 10000 + "w";
+						value = value / 10000 + "w"
 					}
-					return value;
+					return value
 				}
 			},
 			axisTick: {
@@ -195,11 +195,11 @@ const AnnualUseChart = () => {
 					shadowBlur: 20 //shadowBlur设图形阴影的模糊大小。配合shadowColor,shadowOffsetX/Y, 设置图形的阴影效果。
 				},
 				data: val.value
-			};
+			}
 		})
-	};
-	const [echartsRef] = useEcharts(option, data);
-	return <div ref={echartsRef} style={{ width: "100%", height: "100%" }}></div>;
-};
+	}
+	const [echartsRef] = useEcharts(option, data)
+	return <div ref={echartsRef} style={{ width: "100%", height: "100%" }}></div>
+}
 
-export default AnnualUseChart;
+export default AnnualUseChart

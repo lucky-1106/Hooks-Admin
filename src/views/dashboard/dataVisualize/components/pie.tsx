@@ -1,10 +1,10 @@
-import { useEcharts } from "@/hooks/useEcharts";
+import { useEcharts } from "@/hooks/useEcharts"
 
 const Curve = () => {
 	const pieData: any = [
 		{ value: 5000, name: "Gitee 访问量" },
 		{ value: 5000, name: "GitHub 访问量" }
-	];
+	]
 	const option: any = {
 		title: {
 			text: "Gitee / GitHub",
@@ -37,14 +37,14 @@ const Curve = () => {
 				fontWeight: 500
 			},
 			formatter: function (name: string) {
-				let dataCopy = "";
+				let dataCopy = ""
 				for (let i = 0; i < pieData.length; i++) {
 					if (pieData[i].name == name && pieData[i].value >= 10000) {
-						dataCopy = (pieData[i].value / 10000).toFixed(2);
-						return name + "      " + dataCopy + "w";
+						dataCopy = (pieData[i].value / 10000).toFixed(2)
+						return name + "      " + dataCopy + "w"
 					} else if (pieData[i].name == name) {
-						dataCopy = pieData[i].value;
-						return name + "      " + dataCopy;
+						dataCopy = pieData[i].value
+						return name + "      " + dataCopy
 					}
 				}
 			}
@@ -111,10 +111,10 @@ const Curve = () => {
 				]
 			}
 		]
-	};
+	}
 
-	const [echartsRef] = useEcharts(option, pieData);
-	return <div ref={echartsRef} className="content-box"></div>;
-};
+	const [echartsRef] = useEcharts(option, pieData)
+	return <div ref={echartsRef} className="content-box"></div>
+}
 
-export default Curve;
+export default Curve

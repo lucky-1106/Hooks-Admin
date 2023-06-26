@@ -25,4 +25,4 @@ export default {
 		changePassword: "Change Password",
 		logout: "Logout"
 	}
-};
+}

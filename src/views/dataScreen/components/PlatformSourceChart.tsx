@@ -1,10 +1,10 @@
-import { useEcharts } from "@/hooks/useEcharts";
-import { EChartsOption } from "echarts";
+import { useEcharts } from "@/hooks/useEcharts"
+import { EChartsOption } from "echarts"
 
 interface ChartProp {
-	name: string;
-	value: number;
-	percentage: string;
+	name: string
+	value: number
+	percentage: string
 }
 const PlatformSourceChart = () => {
 	let data = [
@@ -28,7 +28,7 @@ const PlatformSourceChart = () => {
 			name: "其他渠道",
 			percentage: "30%"
 		}
-	];
+	]
 	// const colors = ["#078dbc", "#6ad40b", "#6172fc", "#1786ff", "#ffbe2f", "#4dc89d", "#b797df", "#ffd3aa"];
 	const option: EChartsOption = {
 		grid: {
@@ -55,13 +55,13 @@ const PlatformSourceChart = () => {
 			},
 			itemGap: 20,
 			formatter: function (name: string) {
-				let text = "";
+				let text = ""
 				data.forEach((val: ChartProp) => {
 					if (val.name === name) {
-						text = name + " --- " + val.percentage;
+						text = name + " --- " + val.percentage
 					}
-				});
-				return text;
+				})
+				return text
 			},
 			data: data.map((val: ChartProp) => val.name)
 		},
@@ -214,7 +214,7 @@ const PlatformSourceChart = () => {
 								borderWidth: 0,
 								borderColor: "rgba(0,0,0,0)"
 							}
-						};
+						}
 					} else {
 						return {
 							name: (index + 1).toString(),
@@ -224,7 +224,7 @@ const PlatformSourceChart = () => {
 								borderWidth: 0,
 								borderColor: "rgba(0,0,0,0)"
 							}
-						};
+						}
 					}
 				})
 			},
@@ -345,10 +345,10 @@ const PlatformSourceChart = () => {
 				]
 			}
 		]
-	};
-	const [echartsRef] = useEcharts(option, data);
+	}
+	const [echartsRef] = useEcharts(option, data)
 
-	return <div ref={echartsRef} style={{ width: "100%", height: "100%" }}></div>;
-};
+	return <div ref={echartsRef} style={{ width: "100%", height: "100%" }}></div>
+}
 
-export default PlatformSourceChart;
+export default PlatformSourceChart

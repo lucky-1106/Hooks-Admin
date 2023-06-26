@@ -9,7 +9,7 @@ const Gitee = () => {
 				🍒🍉🍊
 			</span>
 		</div>
-	);
-};
+	)
+}
 
-export default Gitee;
+export default Gitee

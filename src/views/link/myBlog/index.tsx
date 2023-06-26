@@ -9,7 +9,7 @@ const MyBlog = () => {
 				🍒🍉🍊
 			</span>
 		</div>
-	);
-};
+	)
+}
 
-export default MyBlog;
+export default MyBlog

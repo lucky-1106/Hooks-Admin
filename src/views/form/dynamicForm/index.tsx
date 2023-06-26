@@ -1,11 +1,11 @@
-import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
-import { Button, Form, Input, Space } from "antd";
-import "./index.less";
+import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons"
+import { Button, Form, Input, Space } from "antd"
+import "./index.less"
 
 const DynamicForm = () => {
 	const onFinish = (values: any) => {
-		console.log("Received values of form:", values);
-	};
+		console.log("Received values of form:", values)
+	}
 
 	return (
 		<div className="card content-box">
@@ -39,7 +39,7 @@ const DynamicForm = () => {
 				</Form.Item>
 			</Form>
 		</div>
-	);
-};
+	)
+}
 
-export default DynamicForm;
+export default DynamicForm

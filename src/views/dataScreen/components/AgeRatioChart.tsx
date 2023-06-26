@@ -1,10 +1,10 @@
-import { useEcharts } from "@/hooks/useEcharts";
-import { EChartsOption } from "echarts";
+import { useEcharts } from "@/hooks/useEcharts"
+import { EChartsOption } from "echarts"
 
 interface ChartProp {
-	value: string;
-	name: string;
-	percentage: string;
+	value: string
+	name: string
+	percentage: string
 }
 const AgeRatioChart = () => {
 	let data: any = [
@@ -38,8 +38,8 @@ const AgeRatioChart = () => {
 			name: "60岁以上",
 			percentage: "20%"
 		}
-	];
-	const colors = ["#F6C95C", "#EF7D33", "#1F9393", "#184EA1", "#81C8EF", "#9270CA"];
+	]
+	const colors = ["#F6C95C", "#EF7D33", "#1F9393", "#184EA1", "#81C8EF", "#9270CA"]
 	const option: EChartsOption = {
 		color: colors,
 		tooltip: {
@@ -54,13 +54,13 @@ const AgeRatioChart = () => {
 			itemGap: 15,
 			itemWidth: 14,
 			formatter: function (name) {
-				let text = "";
+				let text = ""
 				data.forEach((val: ChartProp) => {
 					if (val.name === name) {
-						text = " " + name + "　 " + val.percentage;
+						text = " " + name + "　 " + val.percentage
 					}
-				});
-				return text;
+				})
+				return text
 			},
 			textStyle: {
 				color: "#fff"
@@ -86,7 +86,7 @@ const AgeRatioChart = () => {
 					show: true,
 					color: "#fff",
 					formatter: function (params: any) {
-						return params.data.percentage;
+						return params.data.percentage
 					},
 					rich: {
 						b: {
@@ -111,7 +111,7 @@ const AgeRatioChart = () => {
 							borderColor: colors[index],
 							borderRadius: 10
 						}
-					};
+					}
 				})
 			},
 			{
@@ -141,9 +141,9 @@ const AgeRatioChart = () => {
 				]
 			}
 		]
-	};
-	const [echartsRef] = useEcharts(option, data);
-	return <div ref={echartsRef} style={{ width: "100%", height: "100%" }}></div>;
-};
+	}
+	const [echartsRef] = useEcharts(option, data)
+	return <div ref={echartsRef} style={{ width: "100%", height: "100%" }}></div>
+}
 
-export default AgeRatioChart;
+export default AgeRatioChart

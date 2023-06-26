@@ -1,7 +1,7 @@
-import React from "react";
-import lazyLoad from "@/routers/utils/lazyLoad";
-import { LayoutIndex } from "@/routers/constant";
-import { RouteObject } from "@/routers/interface";
+import React from "react"
+import lazyLoad from "@/routers/utils/lazyLoad"
+import { LayoutIndex } from "@/routers/constant"
+import { RouteObject } from "@/routers/interface"
 
 // dashboard 模块
 const dashboardRouter: Array<RouteObject> = [
@@ -31,6 +31,6 @@ const dashboardRouter: Array<RouteObject> = [
 			}
 		]
 	}
-];
+]
 
-export default dashboardRouter;
+export default dashboardRouter

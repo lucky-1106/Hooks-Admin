@@ -1,12 +1,12 @@
-import { useEcharts } from "@/hooks/useEcharts";
-import { EChartsOption } from "echarts";
-import { ranking1, ranking2, ranking3, ranking4 } from "../assets/ranking-icon";
-import "./HotPlateChart.less";
+import { useEcharts } from "@/hooks/useEcharts"
+import { EChartsOption } from "echarts"
+import { ranking1, ranking2, ranking3, ranking4 } from "../assets/ranking-icon"
+import "./HotPlateChart.less"
 interface ChartProp {
-	name: string;
-	value: number;
-	percentage: string;
-	maxValue: number;
+	name: string
+	value: number
+	percentage: string
+	maxValue: number
 }
 const HotPlateChart = () => {
 	let data = [
@@ -40,8 +40,8 @@ const HotPlateChart = () => {
 			percentage: "30%",
 			maxValue: 100000
 		}
-	];
-	const colors = ["#1089E7", "#F57474", "#56D0E3", "#F8B448", "#8B78F6"];
+	]
+	const colors = ["#1089E7", "#F57474", "#56D0E3", "#F8B448", "#8B78F6"]
 	const option: EChartsOption = {
 		grid: {
 			top: "5%",
@@ -90,9 +90,9 @@ const HotPlateChart = () => {
 				axisLabel: {
 					color: "#fff",
 					formatter: function (value: any) {
-						let str = value.length > 6 ? value.slice(0, 6) + "..." : value;
-						let index = data.map((item: ChartProp) => item.name).indexOf(value) + 1;
-						return ["{" + (index > 3 ? "lg" : "lg" + index) + "|NO." + index + "}", "{title|" + str + "}"].join(" ");
+						let str = value.length > 6 ? value.slice(0, 6) + "..." : value
+						let index = data.map((item: ChartProp) => item.name).indexOf(value) + 1
+						return ["{" + (index > 3 ? "lg" : "lg" + index) + "|NO." + index + "}", "{title|" + str + "}"].join(" ")
 					},
 					rich: {
 						lg1: {
@@ -155,7 +155,7 @@ const HotPlateChart = () => {
 					// align: "right",
 					margin: 20,
 					formatter: (value: any) => {
-						return value >= 10000 ? (value / 10000).toFixed(2) + "w" : value;
+						return value >= 10000 ? (value / 10000).toFixed(2) + "w" : value
 					}
 				},
 				axisLine: {
@@ -180,8 +180,8 @@ const HotPlateChart = () => {
 				itemStyle: {
 					borderRadius: 30,
 					color: function (params) {
-						let num = colors.length;
-						return colors[params.dataIndex % num];
+						let num = colors.length
+						return colors[params.dataIndex % num]
 					}
 				},
 				label: {
@@ -190,7 +190,7 @@ const HotPlateChart = () => {
 					lineHeight: 14,
 					color: "#fff",
 					formatter: (params: any) => {
-						return params.data.percentage;
+						return params.data.percentage
 					}
 				}
 			},
@@ -200,9 +200,9 @@ const HotPlateChart = () => {
 				yAxisIndex: 1,
 				data: data.map((val: ChartProp) => {
 					if (!val.maxValue) {
-						return 5;
+						return 5
 					}
-					return val.maxValue;
+					return val.maxValue
 				}),
 				barWidth: 18,
 				itemStyle: {
@@ -214,8 +214,8 @@ const HotPlateChart = () => {
 				silent: true
 			}
 		]
-	};
-	const [echartsRef] = useEcharts(option, data);
+	}
+	const [echartsRef] = useEcharts(option, data)
 	return (
 		<>
 			<div className="echarts-header">
@@ -225,7 +225,7 @@ const HotPlateChart = () => {
 			</div>
 			<div ref={echartsRef} className="hot-echarts"></div>
 		</>
-	);
-};
+	)
+}
 
-export default HotPlateChart;
+export default HotPlateChart

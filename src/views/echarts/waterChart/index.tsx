@@ -1,11 +1,11 @@
-import { useEcharts } from "@/hooks/useEcharts";
-import * as echarts from "echarts";
-import "echarts-liquidfill";
-import "./index.less";
+import { useEcharts } from "@/hooks/useEcharts"
+import * as echarts from "echarts"
+import "echarts-liquidfill"
+import "./index.less"
 
 const WaterChart = () => {
-	let value = 0.5;
-	let data = [value, value, value];
+	let value = 0.5
+	let data = [value, value, value]
 	let option: echarts.EChartsCoreOption = {
 		title: [
 			{
@@ -288,10 +288,10 @@ const WaterChart = () => {
 				]
 			}
 		]
-	};
+	}
 
-	const [echartsRef] = useEcharts(option, data);
-	return <div ref={echartsRef} className="card content-box"></div>;
-};
+	const [echartsRef] = useEcharts(option, data)
+	return <div ref={echartsRef} className="card content-box"></div>
+}
 
-export default WaterChart;
+export default WaterChart

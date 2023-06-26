@@ -9,7 +9,7 @@ const Juejin = () => {
 				🍒🍉🍊
 			</span>
 		</div>
-	);
-};
+	)
+}
 
-export default Juejin;
+export default Juejin

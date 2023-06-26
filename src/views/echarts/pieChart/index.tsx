@@ -1,5 +1,5 @@
-import { useEcharts } from "@/hooks/useEcharts";
-import * as echarts from "echarts";
+import { useEcharts } from "@/hooks/useEcharts"
+import * as echarts from "echarts"
 
 const PieChart = () => {
 	let option: echarts.EChartsOption = {
@@ -54,10 +54,10 @@ const PieChart = () => {
 				]
 			}
 		]
-	};
+	}
 
-	const [echartsRef] = useEcharts(option);
-	return <div ref={echartsRef} className="card content-box"></div>;
-};
+	const [echartsRef] = useEcharts(option)
+	return <div ref={echartsRef} className="card content-box"></div>
+}
 
-export default PieChart;
+export default PieChart

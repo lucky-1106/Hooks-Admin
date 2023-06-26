@@ -1,7 +1,7 @@
-import Driver from "driver.js"; // import driver.js
-import "driver.js/dist/driver.min.css"; // import driver.js css
-import { Button, Alert } from "antd";
-import steps from "./steps";
+import Driver from "driver.js" // import driver.js
+import "driver.js/dist/driver.min.css" // import driver.js css
+import { Button, Alert } from "antd"
+import steps from "./steps"
 
 const Guide = () => {
 	const driver = new Driver({
@@ -11,13 +11,13 @@ const Guide = () => {
 		closeBtnText: "关闭", // 此步骤的“关闭”按钮上的文本
 		nextBtnText: "下一步", // 此步骤的下一步按钮文本
 		prevBtnText: "上一步" // 此步骤的上一个按钮文本
-	});
+	})
 
 	const guide = () => {
-		driver.defineSteps(steps);
-		driver.start();
-		console.log(driver, "driver");
-	};
+		driver.defineSteps(steps)
+		driver.start()
+		console.log(driver, "driver")
+	}
 	return (
 		<div className="card content-box">
 			<Alert
@@ -31,7 +31,7 @@ const Guide = () => {
 				</Button>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Guide;
+export default Guide

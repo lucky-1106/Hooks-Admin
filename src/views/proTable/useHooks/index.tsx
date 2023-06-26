@@ -1,17 +1,17 @@
-import { useEffect } from "react";
-import { Table, DatePicker, Button, Space } from "antd";
-import useAuthButtons from "@/hooks/useAuthButtons";
+import { useEffect } from "react"
+import { Table, DatePicker, Button, Space } from "antd"
+import useAuthButtons from "@/hooks/useAuthButtons"
 
-import "./index.less";
+import "./index.less"
 
 const UseHooks = () => {
 	// 按钮权限
-	const { BUTTONS } = useAuthButtons();
-	const { RangePicker } = DatePicker;
+	const { BUTTONS } = useAuthButtons()
+	const { RangePicker } = DatePicker
 
 	useEffect(() => {
-		console.log(BUTTONS);
-	}, []);
+		console.log(BUTTONS)
+	}, [])
 
 	const dataSource = [
 		{
@@ -44,7 +44,7 @@ const UseHooks = () => {
 			age: 18,
 			address: "翻斗大街翻斗花园二号楼1001室"
 		}
-	];
+	]
 
 	const columns: any[] = [
 		{
@@ -66,7 +66,7 @@ const UseHooks = () => {
 			align: "center",
 			width: "50%"
 		}
-	];
+	]
 	return (
 		<div className="card content-box">
 			<div className="date">
@@ -82,7 +82,7 @@ const UseHooks = () => {
 			</div>
 			<Table bordered={true} dataSource={dataSource} columns={columns} />
 		</div>
-	);
-};
+	)
+}
 
-export default UseHooks;
+export default UseHooks

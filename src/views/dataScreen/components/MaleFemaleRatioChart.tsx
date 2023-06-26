@@ -1,18 +1,18 @@
-import { useEcharts } from "@/hooks/useEcharts";
-import { EChartsOption } from "echarts";
-import man from "../images/man.png";
-import woman from "../images/woman.png";
-import "./MaleFemaleRatioChart.less";
+import { useEcharts } from "@/hooks/useEcharts"
+import { EChartsOption } from "echarts"
+import man from "../images/man.png"
+import woman from "../images/woman.png"
+import "./MaleFemaleRatioChart.less"
 
 interface ChartProp {
-	man: number;
-	woman: number;
+	man: number
+	woman: number
 }
 const MaleFemaleRatioChart = () => {
 	let data: ChartProp = {
 		man: 0.6,
 		woman: 0.4
-	};
+	}
 	const option: EChartsOption = {
 		xAxis: {
 			type: "value",
@@ -84,7 +84,7 @@ const MaleFemaleRatioChart = () => {
 					offset: [0, -20],
 					fontSize: 12,
 					formatter: () => {
-						return `男士 ${data.man * 100}%`;
+						return `男士 ${data.man * 100}%`
 					}
 				}
 			},
@@ -104,13 +104,13 @@ const MaleFemaleRatioChart = () => {
 					offset: [0, -20],
 					fontSize: 12,
 					formatter: () => {
-						return `女士 ${data.woman * 100}%`;
+						return `女士 ${data.woman * 100}%`
 					}
 				}
 			}
 		]
-	};
-	const [echartsRef] = useEcharts(option, data);
+	}
+	const [echartsRef] = useEcharts(option, data)
 	return (
 		<div className="malefemaleRatio-main">
 			<div className="malefemaleRatio-header">
@@ -125,7 +125,7 @@ const MaleFemaleRatioChart = () => {
 			</div>
 			<div ref={echartsRef} className="echarts"></div>
 		</div>
-	);
-};
+	)
+}
 
-export default MaleFemaleRatioChart;
+export default MaleFemaleRatioChart
